@@ -1,8 +1,10 @@
-import Image from "next/image";
+import { getVersion } from '@/lib/queries';
 
-export default function Home() {
+export default async function Home() {
+  const version = await getVersion();
+  
   return (
-    <div className="p-8">
+    /*<div className="p-8">
       <h3 className="text-center">Question Here</h3>
       <div className="grid grid-cols-2 gap-4 w-full">
         <div className="h-32 p-4 border-4 border-gray-500 bg-red-100">
@@ -18,6 +20,7 @@ export default function Home() {
           Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </div>
       </div>
-    </div>
+    </div>*/
+    <>{version}</>
   );
 }
